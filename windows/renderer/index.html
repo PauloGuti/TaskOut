@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+<title>TaskOut</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="header">
+    <div class="ring"><svg viewBox="0 0 38 38"><circle class="bg" cx="19" cy="19" r="16"/><circle id="ringFg" class="fg" cx="19" cy="19" r="16"/></svg><span id="ringText">·</span></div>
+    <div class="head-text"><h1>Hoy</h1><div id="dateLabel"></div></div>
+    <div class="spacer"></div>
+    <button class="hbtn nodrag" id="btnCal"></button>
+    <button class="hbtn nodrag" id="btnDone" title="Ver lo hecho hoy"></button>
+    <button class="hbtn nodrag" id="btnCats" title="Categorías"></button>
+  </header>
+  <div id="cats" class="popover" hidden></div>
+
+  <section id="composer">
+    <div class="titlebox">
+      <span id="titleIcon"></span>
+      <input id="title" type="text" placeholder="Anotar algo…" autocomplete="off" spellcheck="false">
+      <button id="submitBtn" hidden title="Crear (Enter)">↵</button>
+    </div>
+    <div id="extra" hidden>
+      <div id="catRow" class="chips scroll"></div>
+      <div class="chips" id="whenRow">
+        <button class="chip" id="chipToday">Hoy</button>
+        <button class="chip" id="chipTomorrow">Mañana</button>
+        <input type="date" id="day">
+        <span class="spacer"></span>
+        <input type="time" id="time">
+      </div>
+      <div class="chips" id="durRow"><span class="spacer"></span><span id="endLabel"></span></div>
+      <input id="notes" type="text" placeholder="Nota (opcional)" autocomplete="off" spellcheck="false">
+    </div>
+  </section>
+
+  <main id="list"></main>
+
+  <footer id="footer">
+    <div id="hints">
+      <span class="hint"><kbd>Tab</kbd>mantén: nota</span>
+      <span class="hint"><kbd>↑↓</kbd>elegir</span>
+      <span class="hint"><kbd>↵</kbd>hecha</span>
+      <span class="hint"><kbd>Alt+T</kbd><span id="hintKey">cerrar</span></span>
+    </div>
+    <div id="undo" hidden><span class="ok">✓</span><b>Hecha</b><span class="spacer"></span><button id="undoBtn">Deshacer</button></div>
+    <div id="toast" hidden></div>
+  </footer>
+</div>
+<div id="menu" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

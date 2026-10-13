@@ -1,0 +1,33 @@
+name: Windows
+
+on:
+  push:
+    tags: ['win-v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: windows
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: windows/package-lock.json
+      - run: npm ci
+      - run: npm run dist
+      # Release fijo y "prerelease": nunca pisa el "latest" que usa Sparkle en Mac.
+      - name: Publicar
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view windows-latest >/dev/null 2>&1 || gh release create windows-latest \
+            --prerelease --title "TaskOut para Windows" --notes "Instalador y feed de actualizaciones de la versión de Windows."
+          gh release upload windows-latest dist/TaskOut-Setup.exe dist/TaskOut-Setup.exe.blockmap dist/latest.yml --clobber

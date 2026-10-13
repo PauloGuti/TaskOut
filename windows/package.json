@@ -1,0 +1,29 @@
+{
+  "name": "taskout-windows",
+  "productName": "TaskOut",
+  "version": "1.0.0",
+  "description": "Lista de tareas flotante para Windows con sincronización al Calendario",
+  "main": "main.js",
+  "author": "PauloGuti",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64 --publish never"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.pauloguti.taskout.windows",
+    "productName": "TaskOut",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "calendar.js", "config.json", "renderer/**", "assets/**"],
+    "win": { "target": "nsis", "icon": "assets/icon.png" },
+    "nsis": { "oneClick": true, "perMachine": false, "artifactName": "TaskOut-Setup.exe" },
+    "publish": { "provider": "generic", "url": "https://github.com/PauloGuti/TaskOut/releases/download/windows-latest" }
+  }
+}

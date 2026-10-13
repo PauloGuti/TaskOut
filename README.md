@@ -2,6 +2,8 @@
 
 Lista de tareas para Mac pensada para TDAH: un panel angosto y flotante que se abre y se cierra con **⌥T** desde cualquier app. Las tareas se sincronizan con el Calendario de Apple (un calendario por categoría, con su color), así también las ves en tu iPhone.
 
+> **¿Usas Windows?** Hay una versión aparte en [`windows/`](windows/README.md).
+
 ## Instalar
 
 1. Descarga `TaskOut-x.y.z.zip` desde [Releases](../../releases/latest) y descomprímelo.

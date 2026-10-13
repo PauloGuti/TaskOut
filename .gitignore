@@ -14,3 +14,21 @@
 !Sources/
 !Sources/TaskOut/
 !Sources/TaskOut/*.swift
+
+# Versión de Windows (Electron)
+!.github/
+!.github/workflows/
+!.github/workflows/windows.yml
+!windows/
+!windows/package.json
+!windows/package-lock.json
+!windows/config.json
+!windows/README.md
+!windows/release.sh
+!windows/main.js
+!windows/preload.js
+!windows/calendar.js
+!windows/assets/
+!windows/assets/icon.png
+!windows/renderer/
+!windows/renderer/*
