@@ -324,6 +324,7 @@ struct TaskRow: View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .center, spacing: 11) {
                 CheckButton(color: color, done: isDone, big: isToday) { store.requestToggle(task.id) }
+                    .padding(-6)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(task.title)
                         .font(.system(size: isToday ? 14.5 : 13, weight: isToday ? .semibold : .medium, design: rounded))
@@ -415,6 +416,8 @@ struct CheckButton: View {
             }
             .frame(width: size, height: size)
             .animation(.spring(duration: 0.35, bounce: 0.45), value: done)
+            .padding(6)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .onChange(of: done) { _, v in
