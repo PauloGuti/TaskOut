@@ -245,7 +245,7 @@ struct TaskListView: View {
                         SectionHeader(kind: sec.kind, count: sec.tasks.count)
                         ForEach(sec.tasks) { t in
                             TaskRow(task: t, kind: sec.kind)
-                                .id(t.id)
+                                .id("\(sec.kind)-\(t.id)")
                                 .transition(.asymmetric(
                                     insertion: .opacity.combined(with: .scale(scale: 0.96)),
                                     removal: .opacity.combined(with: .move(edge: .trailing))))
@@ -257,7 +257,9 @@ struct TaskListView: View {
             }
             .scrollIndicators(.hidden)
             .onChange(of: store.selectedID) { _, id in
-                if let id { withAnimation(.easeOut(duration: 0.2)) { proxy.scrollTo(id) } }
+                if let id, let sec = store.sections.first(where: { $0.tasks.contains { $0.id == id } }) {
+                    withAnimation(.easeOut(duration: 0.2)) { proxy.scrollTo("\(sec.kind)-\(id)") }
+                }
             }
         }
     }
