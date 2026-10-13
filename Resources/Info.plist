@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key><string>com.paulo.taskout</string>
+    <key>CFBundleName</key><string>TaskOut</string>
+    <key>CFBundleDisplayName</key><string>TaskOut</string>
+    <key>CFBundleExecutable</key><string>TaskOut</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>1.0</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>LSUIElement</key><true/>
+    <key>SUFeedURL</key><string>https://github.com/PauloGuti/TaskOut/releases/latest/download/appcast.xml</string>
+    <key>SUPublicEDKey</key><string>cDyBbTIXZ+eW0xQQavSmASn3rx1w7x6+CWsB8X1+Vmw=</string>
+    <key>SUEnableAutomaticChecks</key><true/>
+    <key>NSPrincipalClass</key><string>NSApplication</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSCalendarsFullAccessUsageDescription</key>
+    <string>TaskOut crea tus tareas como eventos en el Calendario para que las veas también en tu iPhone.</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>TaskOut crea tus tareas como eventos en el Calendario.</string>
+</dict>
+</plist>

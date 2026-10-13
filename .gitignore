@@ -1,0 +1,16 @@
+# Allowlist: se ignora TODO y solo se publica lo necesario para compilar y usar la app.
+*
+
+!.gitignore
+!LICENSE
+!README.md
+!VERSION
+!Package.swift
+!Package.resolved
+!build.sh
+!release.sh
+!Resources/
+!Resources/Info.plist
+!Sources/
+!Sources/TaskOut/
+!Sources/TaskOut/*.swift
